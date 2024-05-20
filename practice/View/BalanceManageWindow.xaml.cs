@@ -15,25 +15,24 @@ using System.Windows.Shapes;
 namespace practice.View
 {
     /// <summary>
-    /// Логика взаимодействия для DepositWindow.xaml
+    /// Логика взаимодействия для BalanceManageWindow.xaml
     /// </summary>
-    public partial class DepositWindow : Window
+    public partial class BalanceManageWindow : Window
     {
-
-        public DepositWindow()
+        public BalanceManageWindow()
         {
             InitializeComponent();
-        }
-        private void DepositCategoresButton_Click(object sender, RoutedEventArgs e)
-        {
-            DepositWindow depositWindow = new DepositWindow();
-            depositWindow.Show();
-            Close();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainClientWindow mClW = new MainClientWindow();
             mClW.Show();
+            Close();
+        }
+        private void DepositCategoresButton_Click(object sender, RoutedEventArgs e)
+        {
+            DepositWindow depositWindow = new DepositWindow();
+            depositWindow.Show();
             Close();
         }
     }

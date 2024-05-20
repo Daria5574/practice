@@ -36,5 +36,12 @@ namespace practice.View
             depositWindow.Show();
             Close();
         }
+
+        private void AddClient_Click(object sender, RoutedEventArgs e)
+        {
+            AddClientWindow addClWin = new AddClientWindow();
+            addClWin.Show();
+            Close();
+        }
     }
 }

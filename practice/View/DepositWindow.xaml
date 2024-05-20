@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Вклады" Height="650" Width="800"  Background="#C4E9AD">
     <Window.Resources>
-        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+        <Style  x:Name="depositListView" x:Key="ButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#3BC452" />
             <Setter Property="Foreground" Value="White" />
             <Setter Property="Template">

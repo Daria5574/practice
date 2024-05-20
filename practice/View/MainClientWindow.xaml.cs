@@ -19,9 +19,22 @@ namespace practice.View
     /// </summary>
     public partial class MainClientWindow : Window
     {
+        public class MyListItem
+        {
+            public string Name { get; set; }
+            public string Description { get; set; }
+        }
         public MainClientWindow()
         {
             InitializeComponent();
+
+            var myList = new List<MyListItem>
+             {
+                 new MyListItem { Name = "Примерный элемент", Description = "Это описание для примера" }
+             };
+
+            // Привязка источника данных к ListView
+            depositListView.ItemsSource = myList;
         }
         public void myProfileImage_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -29,12 +42,27 @@ namespace practice.View
             myProfWind.Show();
             Close();
         }
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainClientWindow mClW = new MainClientWindow();
+            mClW.Show();
+            Close();
+        }
         private void DepositCategoresButton_Click(object sender, RoutedEventArgs e)
         {
             DepositWindow depositWindow = new DepositWindow();
             depositWindow.Show();
             Close();
         }
+        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is ListViewItem listViewItem)
+            {
+                DepositDetailsWindow DepositDetailsW = new DepositDetailsWindow();
+                DepositDetailsW.Show();
+                Close();
+            }
+        }
     }
 }
+

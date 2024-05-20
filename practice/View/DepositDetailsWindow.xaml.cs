@@ -15,14 +15,19 @@ using System.Windows.Shapes;
 namespace practice.View
 {
     /// <summary>
-    /// Логика взаимодействия для DepositWindow.xaml
+    /// Логика взаимодействия для DepositDetailsWindow.xaml
     /// </summary>
-    public partial class DepositWindow : Window
+    public partial class DepositDetailsWindow : Window
     {
-
-        public DepositWindow()
+        public DepositDetailsWindow()
         {
             InitializeComponent();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainClientWindow mClW = new MainClientWindow();
+            mClW.Show();
+            Close();
         }
         private void DepositCategoresButton_Click(object sender, RoutedEventArgs e)
         {
@@ -30,10 +35,11 @@ namespace practice.View
             depositWindow.Show();
             Close();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void MoneyButton_Click(object sender, RoutedEventArgs e)
         {
-            MainClientWindow mClW = new MainClientWindow();
-            mClW.Show();
+            BalanceManageWindow balanceManageWindow = new BalanceManageWindow();
+            balanceManageWindow.Show();
             Close();
         }
     }
