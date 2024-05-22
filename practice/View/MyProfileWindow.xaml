@@ -42,8 +42,7 @@
 
 
         <Label Content="Мой профиль" HorizontalAlignment="Left" FontSize="28" Margin="56,96,0,0" VerticalAlignment="Top"/>
-        <Image Margin="41,28,599,550"  Source="D:\3_курс\практика\картинки\сбер2.jpg" Width="160"/>
-        <Button Content="Изменить данные профиля" FontSize="14" HorizontalAlignment="Left" Margin="532,105,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}" />
+        <Image Margin="41,28,599,550"  Source="D:\3_курс\практика\картинки\сбер2.jpg" Width="160"  MouseLeftButtonDown="sberImage_MouseLeftButtonDown"/>
         <Button Content="Главная" HorizontalAlignment="Left" Margin="515,31,0,0" VerticalAlignment="Top" FontWeight= "Medium" Style="{StaticResource Button2Style}" Click="Button_Click"/>
         <Button Content="Категории вкладов" x:Name="DepositCategoresButton" HorizontalAlignment="Left" Margin="599,31,0,0" VerticalAlignment="Top" FontWeight= "Medium" Style="{StaticResource Button2Style}" Click="DepositCategoresButton_Click"/>
         <Label Content="ФИО:" HorizontalAlignment="Left" Margin="69,161,0,0" FontSize="16" VerticalAlignment="Top"/>
@@ -52,6 +51,6 @@
         <Label Content="Email:" HorizontalAlignment="Left" Margin="70,254,0,0" FontSize="16" VerticalAlignment="Top"/>
         <Label Content="Адрес проживания:" HorizontalAlignment="Left" Margin="70,285,0,0" FontSize="16" VerticalAlignment="Top"/>
         <Label Content="Паспортые данные:" HorizontalAlignment="Left" Margin="69,316,0,0" FontSize="16" VerticalAlignment="Top"/>
-        <Button Content="Выйти из профиля" FontSize="14" HorizontalAlignment="Left" Margin="589,398,0,0" VerticalAlignment="Top" Background="#D35858" Style="{StaticResource ButtonStyle}" />
+        <Button Content="Выйти из профиля" FontSize="14" HorizontalAlignment="Left" Margin="589,398,0,0" VerticalAlignment="Top" Background="#D35858" Style="{StaticResource ButtonStyle}" x:Name="ExitButton" Click="ExitButton_Click"/>
     </Grid>
 </Window>

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace practice.View
 {
     /// <summary>
-    /// Логика взаимодействия для AddClientWindow.xaml
+    /// Логика взаимодействия для EditClientWindow.xaml
     /// </summary>
-    public partial class AddClientWindow : Window
+    public partial class EditClientWindow : Window
     {
-        public AddClientWindow()
+        public EditClientWindow()
         {
             InitializeComponent();
         }
@@ -42,17 +42,17 @@ namespace practice.View
             Close();
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Клиент добавлен успешно!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-
             ClientsWindow clientsWindow = new ClientsWindow();
             clientsWindow.Show();
             Close();
         }
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        private void EditButton_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Клиент успешно изменен!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+
             ClientsWindow clientsWindow = new ClientsWindow();
             clientsWindow.Show();
             Close();

@@ -43,5 +43,18 @@ namespace practice.View
             addClWin.Show();
             Close();
         }
+
+        private void editClient_Click(object sender, RoutedEventArgs e)
+        {
+            EditClientWindow editClWin = new EditClientWindow();
+            editClWin.Show();
+            Close();
+        }
+        public void sberImage_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ClientsWindow clientsWindow = new ClientsWindow();
+            clientsWindow.Show();
+            Close();
+        }
     }
 }

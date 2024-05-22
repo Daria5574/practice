@@ -35,5 +35,24 @@ namespace practice.View
             mClW.Show();
             Close();
         }
+        public void sberImage_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ClientsWindow clientsWindow = new ClientsWindow();
+            clientsWindow.Show();
+            Close();
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Вы действительно хотите выйти?", "Подтверждение выхода", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            // Обработать результат диалогового окна
+            if (result == MessageBoxResult.Yes)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                Close();
+            }
+        }
     }
 }

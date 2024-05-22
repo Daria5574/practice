@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace practice.View
 {
     /// <summary>
-    /// Логика взаимодействия для BalanceManageWindow.xaml
+    /// Логика взаимодействия для EditDepositWindow.xaml
     /// </summary>
-    public partial class BalanceManageWindow : Window
+    public partial class EditDepositWindow : Window
     {
-        public BalanceManageWindow()
+        public EditDepositWindow()
         {
             InitializeComponent();
         }
@@ -35,46 +35,56 @@ namespace practice.View
             depositWindow.Show();
             Close();
         }
+        public void sberImage_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ClientsWindow clientsWindow = new ClientsWindow();
+            clientsWindow.Show();
+            Close();
+        }
         private void OnPreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             if (char.IsDigit(e.Text, 0) || e.Text == "." || e.Text == ",")
             {
                 if ((e.Text == "." || e.Text == ",") && ((sender as TextBox).Text.Contains(".") || (sender as TextBox).Text.Contains(",")))
                 {
-                    e.Handled = true;
+                    e.Handled = true; 
                 }
                 else
                 {
-                    e.Handled = false;
+                    e.Handled = false; 
                 }
             }
             else
             {
-                e.Handled = true;
+                e.Handled = true; 
             }
         }
 
-        private void PlusButton_Click(object sender, RoutedEventArgs e)
+        private void currencyTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            MessageBox.Show("Пополнение прошло успешно!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+            if (currencyTextBox.Text.Length >= 3)
+            {
+                e.Handled = true;
+            }
 
-            DepositDetailsWindow depositDetailsWindow = new DepositDetailsWindow();
-            depositDetailsWindow.Show();
+            else if (!System.Text.RegularExpressions.Regex.IsMatch(e.Text, "^[A-Z]$"))
+            {
+                e.Handled = true;
+            }
+        }
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            DepositWindow depositWindow = new DepositWindow();
+            depositWindow.Show();
             Close();
         }
 
-        private void MinusButton_Click(object sender, RoutedEventArgs e)
+        private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Снятие средств прошло успешно!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Вклад успешно изменен!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            DepositDetailsWindow depositDetailsWindow = new DepositDetailsWindow();
-            depositDetailsWindow.Show();
-            Close();
-        }
-        public void sberImage_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            ClientsWindow clientsWindow = new ClientsWindow();
-            clientsWindow.Show();
+            DepositWindow depositWindow = new DepositWindow();
+            depositWindow.Show();
             Close();
         }
     }

@@ -42,6 +42,14 @@ namespace practice.View
             myProfWind.Show();
             Close();
         }
+
+        public void sberImage_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ClientsWindow clientsWindow = new ClientsWindow();
+            clientsWindow.Show();
+            Close();
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainClientWindow mClW = new MainClientWindow();
@@ -62,6 +70,13 @@ namespace practice.View
                 DepositDetailsW.Show();
                 Close();
             }
+        }
+
+        private void NewDepositButton_Click(object sender, RoutedEventArgs e)
+        {
+            DepositWindow depositWindow = new DepositWindow();
+            depositWindow.Show();
+            Close();
         }
     }
 }

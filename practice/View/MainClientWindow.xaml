@@ -43,8 +43,8 @@
 
 
         <Label Content="Главная" HorizontalAlignment="Left" FontSize="28" Margin="56,96,0,0" VerticalAlignment="Top"/>
-        <Image Margin="41,28,599,550"  Source="D:\3_курс\практика\картинки\сбер2.jpg" Width="160"/>
-        <Button Content="Открыть новый счет" HorizontalAlignment="Left" Margin="251,199,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}" />
+        <Image Margin="41,28,599,550"  Source="D:\3_курс\практика\картинки\сбер2.jpg" Width="160" MouseLeftButtonDown="sberImage_MouseLeftButtonDown"/>
+        <Button Content="Открыть новый счет" HorizontalAlignment="Left" Margin="251,199,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}" x:Name="NewDepositButton" Click="NewDepositButton_Click"/>
         <ListView x:Name="depositListView" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="81,247,407,175">
             <ListView.View>
                 <GridView>

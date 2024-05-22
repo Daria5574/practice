@@ -36,5 +36,25 @@ namespace practice.View
             mClW.Show();
             Close();
         }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddDepositWindow depositWindow = new AddDepositWindow();
+            depositWindow.Show();
+            Close();
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            EditDepositWindow depositWindow = new EditDepositWindow();
+            depositWindow.Show();
+            Close();
+        }
+        public void sberImage_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ClientsWindow clientsWindow = new ClientsWindow();
+            clientsWindow.Show();
+            Close();
+        }
     }
 }

@@ -42,5 +42,22 @@ namespace practice.View
             balanceManageWindow.Show();
             Close();
         }
+        public void sberImage_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ClientsWindow clientsWindow = new ClientsWindow();
+            clientsWindow.Show();
+            Close();
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Вы действительно хотите закрыть данный счет?", "Подтверждение закрытия счета", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                MainClientWindow mainClientWindow = new MainClientWindow();
+                mainClientWindow.Show();
+                Close();
+            }
+        }
     }
 }

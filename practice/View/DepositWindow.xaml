@@ -43,7 +43,7 @@
 
 
         <Label Content="Выберите вклад" HorizontalAlignment="Left" FontSize="28" Margin="56,96,0,0" VerticalAlignment="Top"/>
-        <Image Margin="41,28,599,550"  Source="D:\3_курс\практика\картинки\сбер2.jpg" Width="160"/>
+        <Image Margin="41,28,599,550"  Source="D:\3_курс\практика\картинки\сбер2.jpg" Width="160"  MouseLeftButtonDown="sberImage_MouseLeftButtonDown"/>
         <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="86,189,426,206">
             <ListView.View>
                 <GridView>
@@ -51,7 +51,9 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="560,107,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}" x:Name="AddButton" Click="AddButton_Click" />
         <Button Content="Главная" HorizontalAlignment="Left" Margin="515,31,0,0" VerticalAlignment="Top" FontWeight= "Medium" Style="{StaticResource Button2Style}" Click="Button_Click"/>
         <Button Content="Категории вкладов" x:Name="DepositCategoresButton" HorizontalAlignment="Left" Margin="599,31,0,0" VerticalAlignment="Top" FontWeight= "Medium" Style="{StaticResource Button2Style}" Click="DepositCategoresButton_Click"/>
+        <Button Content="Изменить" HorizontalAlignment="Left" Margin="654,107,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}" x:Name="EditButton" Click="EditButton_Click" />
     </Grid>
 </Window>

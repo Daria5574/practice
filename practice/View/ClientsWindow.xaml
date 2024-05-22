@@ -42,12 +42,12 @@
 
         <Label Content="Клиенты" HorizontalAlignment="Left" FontSize="28" Margin="56,96,0,0" VerticalAlignment="Top"/>
         <Image Margin="41,28,599,550"  Source="D:\3_курс\практика\картинки\сбер2.jpg" Width="160"/>
-        <TextBox HorizontalAlignment="Left" Margin="56,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="482"/>
+        <TextBox HorizontalAlignment="Left" Margin="56,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="482"  MouseLeftButtonDown="sberImage_MouseLeftButtonDown"/>
         <Button Content="Поиск" HorizontalAlignment="Left" Margin="558,148,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}"/>
         <Button Content="Отмена" HorizontalAlignment="Left" Margin="627,148,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}" />
         <Button Content="Добавить" HorizontalAlignment="Left" Margin="56,193,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}" x:Name="AddClient" Click="AddClient_Click"/>
-        <Button Content="Изменить" HorizontalAlignment="Left" Margin="149,193,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}" />
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="28,244,28,53">
+        <Button Content="Изменить" HorizontalAlignment="Left" Margin="149,193,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}" x:Name="editClient" Click="editClient_Click"/>
+        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="56,244,62,53">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

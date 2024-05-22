@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace practice.View
 {
     /// <summary>
-    /// Логика взаимодействия для BalanceManageWindow.xaml
+    /// Логика взаимодействия для AddDepositWindow.xaml
     /// </summary>
-    public partial class BalanceManageWindow : Window
+    public partial class AddDepositWindow : Window
     {
-        public BalanceManageWindow()
+        public AddDepositWindow()
         {
             InitializeComponent();
         }
@@ -54,27 +54,38 @@ namespace practice.View
             }
         }
 
-        private void PlusButton_Click(object sender, RoutedEventArgs e)
+        private void currencyTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            MessageBox.Show("Пополнение прошло успешно!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+            if (currencyTextBox.Text.Length >= 3)
+            {
+                e.Handled = true;
+            }
 
-            DepositDetailsWindow depositDetailsWindow = new DepositDetailsWindow();
-            depositDetailsWindow.Show();
-            Close();
-        }
-
-        private void MinusButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Снятие средств прошло успешно!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-
-            DepositDetailsWindow depositDetailsWindow = new DepositDetailsWindow();
-            depositDetailsWindow.Show();
-            Close();
+            else if (!System.Text.RegularExpressions.Regex.IsMatch(e.Text, "^[A-Z]$"))
+            {
+                e.Handled = true;
+            }
         }
         public void sberImage_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             ClientsWindow clientsWindow = new ClientsWindow();
             clientsWindow.Show();
+            Close();
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            DepositWindow depositWindow = new DepositWindow();
+            depositWindow.Show();
+            Close();
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Вклад успешно добавлен!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            DepositWindow depositWindow = new DepositWindow();
+            depositWindow.Show();
             Close();
         }
     }
